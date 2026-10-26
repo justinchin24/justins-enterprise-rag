@@ -1,0 +1,37 @@
+# Environment & Secret Keys
+.env
+.env.*
+*.pem
+*.key
+
+# Local Databases & Vector Stores
+chroma_db/
+*.sqlite3
+*.db
+
+# Python Bytecode & Cache - created automatically for quicker execution
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Code Editor Metadata - personal VS code editor settings that should not override another developer's settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS System Files - stores folder view settings; not needed for version control
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit Local Configuration - prevents accidental key leaks if Streamlit's native secrets management is tested locally
+.streamlit/secrets.toml

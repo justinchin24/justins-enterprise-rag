@@ -1,0 +1,23 @@
+=====================================================
+GLOBAL ENTERPRISE IT OPERATIONAL MANUAL & SOP v4.2
+=====================================================
+
+SECTION 1: PASSWORD & ACCESS MANAGEMENT POLICY
+1.1 Password Complexity Rules
+All enterprise domain passwords must be a minimum of 16 characters in length. Passwords must contain at least one uppercase letter, one lowercase letter, one number, and one special character (!@#$%^&*). Passwords expire every 90 days.
+1.2 Account Lockout Policy
+Account lockouts occur automatically after 5 consecutive failed login attempts. To request an account unlock or password reset, users must contact the IT Helpdesk or submit a ticket via the ServiceNow Portal. Self-service password resets require Multi-Factor Authentication (MFA) setup via Microsoft Authenticator.
+
+SECTION 2: REMOTE WORK & VPN ACCESS PROCEDURES
+2.1 Global Protect VPN Guidelines
+Employees accessing corporate resources remotely must connect using the GlobalProtect VPN client with MFA enabled. Split-tunneling is strictly prohibited; all internet traffic must route through enterprise firewalls.
+2.2 Hardware Security Requirements
+Corporate laptops must not be left unattended in public places. Encrypted BitLocker storage is required on all local drives. Connecting unauthorized USB storage devices will trigger an automated endpoint protection alert and disable the USB port.
+
+SECTION 3: SOFTWARE INCIDENT ESCALATION MATRIX
+3.1 Priority 1 (P1) - Enterprise Outage
+Definition: Critical business service down affecting >25% of users with no immediate workaround.
+Response Time SLA: 15 minutes. Escalation Path: Duty Manager -> On-Call Engineer -> CISO.
+3.2 Priority 2 (P2) - High Severity Incident
+Definition: Major feature functionality degraded affecting multiple business units.
+Response Time SLA: 1 hour. Escalation Path: Domain Lead -> Support Lead.

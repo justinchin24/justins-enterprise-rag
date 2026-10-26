@@ -1,0 +1,3 @@
+sing the GlobalProtect VPN client with MFA enabled. Split-tunneling is strictly prohibited; all internet traffic must route through enterprise firewalls.
+2.2 Hardware Security Requirements
+Corporate laptops must not be left unattended in public places. Encrypted BitLocker storage is required on all local drives. Connecting unauthorized USB storage devices will trigger an automated endpoint protect
