@@ -80,10 +80,11 @@ v
 - A Google Gemini API key ([Get an API Key](https://aistudio.google.com/))
 
 ### 2. Repository Setup
-Clone the repository and navigate into the project directory:
+Clone the repository and open in VS code:
 ```bash
 git clone https://github.com/justinchin24/justins-enterprise-rag.git
 cd justins-enterprise-rag
+code .
 ```
 
 ### 3. Virtual Environment Setup
