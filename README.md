@@ -82,14 +82,16 @@ v
 ### 2. Repository Setup
 Clone the repository and navigate into the project directory:
 ```bash
-git clone https://github.com/justinchin24/enterprise-it-rag-agent.git
-cd enterprise-it-rag-agent
+git clone https://github.com/justinchin24/justins-enterprise-rag.git
+cd justins-enterprise-rag
 ```
 
 ### 3. Virtual Environment Setup
 Create and activate an isolated Python virtual environment:
 ```bash
-python -m venv .venv
+py -m venv .venv
+
+# On Windows:
 .venv\Scripts\activate
 ```
 
