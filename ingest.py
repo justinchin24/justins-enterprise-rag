@@ -1,6 +1,7 @@
 import os
 # PdfReader is what opens the PDF file, parses its internal structure, and allows the code to go through each page to extract raw text
 from pypdf import PdfReader
+import chromadb
 
 # This function takes in a string (file path) and returns the raw text of the document being read (another string)
 def load_text_from_file(file_path: str) -> str:
@@ -46,7 +47,23 @@ if __name__ == "__main__":
         chunks = chunk_text(raw_text, chunk_size=400, chunk_overlap=80)
         print(f"Successfully generated {len(chunks)} text chunks.")
         
-        print("\n--- SAMPLE CHUNK 1 ---")
-        print(chunks[0])
+        print("Initializing ChromaDB and storing embeddings...")
+        
+        # Initialize a persistent ChromaDB client and save it to a local folder named 'chroma_db'
+        chroma_client = chromadb.PersistentClient(path="chroma_db")
+        
+        # Create a collection called 'it_policies' if it doesn't yet exist
+        collection = chroma_client.get_or_create_collection(name="it_policies")
+        
+        # Take each chunk ID and put it in a list
+        ids = [f"chunk_{i}" for i in range(len(chunks))]
+        
+        # Add the chunk text and chunk ids to the collection
+        collection.add(
+            documents=chunks,
+            ids=ids
+        )
+        
+        print(f"Successfully stored {len(chunks)} chunks into ChromaDB vector database!")
     else:
         print(f"File not found at {sample_path}. Please place a sample file in data/")
