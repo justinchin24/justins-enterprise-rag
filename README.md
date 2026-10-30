@@ -108,7 +108,13 @@ Create a .env file in the root directory and add your Google Gemini API key:
 echo GEMINI_API_KEY=your_actual_api_key_here > .env
 ```
 
-### 6. Running the Application
+### 6. Ingest sample document into Vector database
+Launch the Streamlit web application:
+```bash
+python ingest.py
+```
+
+### 7. Running the Application
 Launch the Streamlit web application:
 ```bash
 streamlit run app.py
