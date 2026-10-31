@@ -109,7 +109,6 @@ echo GEMINI_API_KEY=your_actual_api_key_here > .env
 ```
 
 ### 6. Ingest sample document into Vector database
-Launch the Streamlit web application:
 ```bash
 python ingest.py
 ```
