@@ -76,7 +76,7 @@ v
 ## 🚀 Local Setup & Installation
 
 ### 1. Prerequisites
-- Python 3.10 or higher
+- Python 3.10, 3.11, or 3.12 
 - A Google Gemini API key ([Get an API Key](https://aistudio.google.com/))
 
 ### 2. Repository Setup
@@ -88,9 +88,10 @@ code .
 ```
 
 ### 3. Virtual Environment Setup
-Create and activate an isolated Python virtual environment:
+Create and activate an isolated Python virtual environment using a stable Python version (e.g., 3.12):
 ```bash
-py -m venv .venv
+# If you have multiple Python versions, create the virtual environment using version 3.12:
+py -3.12 -m venv .venv
 
 # On Windows:
 .venv\Scripts\activate
