@@ -73,7 +73,7 @@ v
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Local Setup & Installation
 
 ### 1. Prerequisites
 - Python 3.10 or higher
