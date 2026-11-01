@@ -123,7 +123,7 @@ streamlit run app.py
 ## 📁 Repository Structure
 
 ```text
-enterprise-it-rag-agent/
+justins-enterprise-rag/
 │
 ├── chroma_db/             # Local ChromaDB vector database directory (ignored in git)
 ├── data/                  # Sample IT SOP and Policy PDF documents
