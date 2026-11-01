@@ -126,11 +126,14 @@ streamlit run app.py
 enterprise-it-rag-agent/
 │
 ├── chroma_db/             # Local ChromaDB vector database directory (ignored in git)
-├── docs/                  # Sample IT SOP and Policy PDF documents
+├── data/                  # Sample IT SOP and Policy PDF documents
 ├── .env                   # Environment variables and API keys (ignored in git)
 ├── .gitignore             # Git ignore file
 ├── app.py                 # Streamlit UI implementation & chat logic
-├── rag_engine.py          # Vector search, ingestion, and GenAI query logic
-├── requirements.txt       # Project dependencies
+├── ingest.py              # Vector ingestion
+├── vector_store.py        # Vector database creation
+├── query_vector_store.py  # Vector searching
+├── generate_answer.py     # Gemini RAG logic
+├── requirements.txt       # Project dependencies to install
 └── README.md              # Project documentation
 ```
