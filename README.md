@@ -6,7 +6,7 @@ An enterprise-grade Retrieval-Augmented Generation (RAG) agent built with Python
 
 ## 📌 Features
 
-- **Document Ingestion & Chunking:** Processes raw PDF documentation (IT SOPs, security guidelines, onboarding policies) into clean text chunks.
+- **Document Ingestion & Chunking:** Processes raw documentation in both PDF and plain text formats (IT SOPs, security guidelines, onboarding policies) into clean, overlapping text chunks.
 - **Vector Database Storage:** Stores high-dimensional document embeddings locally using **ChromaDB** for efficient similarity searches.
 - **Semantic Retrieval:** Queries the vector database to extract top relevant excerpts based on user intent rather than simple keyword matching.
 - **Grounded Answer Generation:** Constructs strict system prompts paired with the **Google GenAI SDK** (Gemini) to prevent hallucinations and generate accurate, context-aware responses.
@@ -22,7 +22,7 @@ The following diagram illustrates the complete end-to-end data flow:
 +-----------------------------------------------------------------------------------+
 |                                 1. INGESTION PHASE                                |
 |                                                                                   |
-|  [ PDF Documents ] ---> ( Text Extraction ) ---> ( Recursive Text Chunking )      |
+|  [ Source Docs (.pdf / .txt) ] ---> ( Parsing & Extraction ) ---> ( Text Chunking )|
 |                                                                 |                 |
 |                                                                 v                 |
 |                                                      [ Text Chunks ]              |
@@ -55,21 +55,10 @@ v
 ```
 
 ### Architectural Breakdown
-1. **Document Ingestion:** Raw PDFs are ingested, extracted, and segmented into semantic text chunks to maximize retrieval relevance.
-2. **Vector Indexing:** Chunks are converted into vector embeddings and stored in a persistent local **ChromaDB** collection.
+1. **Document Ingestion:** Raw source documents (.pdf and .txt) are parsed, extracted, and segmented into semantic text chunks to maximize retrieval relevance.
 3. **Semantic Querying:** When a user inputs a query via `st.chat_input`, ChromaDB identifies and extracts the top $k$ (k = 3) relevant context blocks using cosine similarity.
 4. **Grounded Generation:** The user query and retrieved context chunks are wrapped in a strict prompt template sent to Gemini, ensuring the LLM answers *only* using supplied enterprise documentation.
 5. **Interactive UI:** The response is streamed to the user with a collapsible `st.expander` view for exact citation transparency.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend / Framework:** Streamlit
-- **LLM API:** Google GenAI SDK (Gemini)
-- **Vector Database:** ChromaDB
-- **Text Processing:** PyPDF2 / LangChain Text Splitters
-- **Environment Management:** Python 3.10+ / `python-dotenv`
 
 ---
 
